@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    botpr:
+      container_name: botpr
+      image: cayke1/botpr:latest
+      ports:
+        - 4000:4000
+      environment:
+        restart: always
