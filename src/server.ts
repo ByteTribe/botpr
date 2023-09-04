@@ -7,7 +7,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.post('/github-webhook', (req, res) => {
-    const payload: GitHubPayload = req.body;
+    const payload: any = req.body;
+    console.log(payload);
     handleGitHubWebhook(payload);
     res.sendStatus(200);
 });

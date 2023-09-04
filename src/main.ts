@@ -26,7 +26,8 @@ export const sendDiscordMessage = async (message:string) => {
     }
 };
 
-export const handleGitHubWebhook = (payload: GitHubPayload) => {
+export const handleGitHubWebhook = (payload: any) => {
+    
     if(payload.action === 'opened') {
         const { title } = payload.pull_request;
         const senderName = payload.sender.login;
