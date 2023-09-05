@@ -1,15 +1,16 @@
 import express from 'express';
-import { GitHubPayload, handleGitHubWebhook } from './main';
+import { handleGitHubWebhookPr } from './main';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.post('/github-webhook', (req, res) => {
+app.post('/github-webhook/pull-request', (req, res) => {
     const payload: any = req.body;
     console.log(payload);
-    handleGitHubWebhook(payload);
+    console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n -------------------------------------------------------------------------------- \n');
+    handleGitHubWebhookPr(payload);
     res.sendStatus(200);
 });
 
